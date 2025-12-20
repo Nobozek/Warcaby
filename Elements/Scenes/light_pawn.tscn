@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyidrmsxy7dud"]
+
+[ext_resource type="Texture2D" uid="uid://c4xt7fc8lqmqh" path="res://Resources/Textures/light_pawn.png" id="1_tg7lc"]
+[ext_resource type="Texture2D" uid="uid://by1kajni5erhi" path="res://Resources/Textures/can_capture.png" id="2_o7whi"]
+[ext_resource type="Script" uid="uid://cplmong0yod7f" path="res://Elements/Scripts/light_pawn.gd" id="2_v4030"]
+[ext_resource type="Texture2D" uid="uid://bav616768curs" path="res://Resources/Textures/crown.png" id="4_i6yef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4030"]
+radius = 60.074955
+
+[node name="LightPawn" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("2_v4030")
+
+[node name="Can_Capture" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_o7whi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tg7lc")
+
+[node name="Crown" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_i6yef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v4030")

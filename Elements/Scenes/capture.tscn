@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdraxhsfy60l2"]
+
+[ext_resource type="Texture2D" uid="uid://bwjh4tixcgs02" path="res://Resources/Textures/attack.png" id="1_0lvqw"]
+[ext_resource type="Script" uid="uid://dis4lx1726bf" path="res://Elements/Scripts/capture.gd" id="1_kp0ir"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kp0ir"]
+radius = 16.03122
+
+[node name="Capture" type="Area2D"]
+script = ExtResource("1_kp0ir")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0lvqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_kp0ir")

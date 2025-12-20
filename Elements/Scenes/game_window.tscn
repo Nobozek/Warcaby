@@ -1,0 +1,184 @@
+[gd_scene load_steps=11 format=4 uid="uid://bqawdpnmcgbyj"]
+
+[ext_resource type="Texture2D" uid="uid://cjd4ykmi1i7yg" path="res://Resources/Textures/board_tiles.png" id="1_1iocf"]
+[ext_resource type="Texture2D" uid="uid://b3nfsyviuhrog" path="res://Resources/Textures/background.png" id="1_2je6m"]
+[ext_resource type="Script" uid="uid://cq72keilsxd1t" path="res://Elements/Scripts/board.gd" id="2_wfyby"]
+[ext_resource type="PackedScene" uid="uid://bdk7u6m8a1ga8" path="res://Elements/Scenes/dark_pawn.tscn" id="3_gfh0i"]
+[ext_resource type="PackedScene" uid="uid://cyidrmsxy7dud" path="res://Elements/Scenes/light_pawn.tscn" id="4_7458n"]
+[ext_resource type="PackedScene" uid="uid://cx6pvty825yun" path="res://Elements/Scenes/possible_move.tscn" id="5_3il2b"]
+[ext_resource type="PackedScene" uid="uid://cdraxhsfy60l2" path="res://Elements/Scenes/capture.tscn" id="6_v3s5q"]
+[ext_resource type="Texture2D" uid="uid://dhi0q3u7xd346" path="res://Resources/Textures/giveup_button.png" id="8_q5kwk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3s5q"]
+texture = ExtResource("1_1iocf")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gfh0i"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_v3s5q")
+
+[node name="GameWindow" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2je6m")
+
+[node name="Board" type="Node2D" parent="."]
+position = Vector2(448, 28)
+script = ExtResource("2_wfyby")
+white_pawn_scene = ExtResource("4_7458n")
+red_pawn_scene = ExtResource("3_gfh0i")
+possible_move = ExtResource("5_3il2b")
+capture = ExtResource("6_v3s5q")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Board"]
+position = Vector2(512, 512)
+tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAAAAAAAAAAAAAEAAAAAAP//AAAAAAAAAAD//wAAAAAAAAAAAAD+//7/AAAAAAEAAAD9//3/AAAAAAEAAAD8//z/AAAAAAEAAAD+//z/AAAAAAEAAAAAAPz/AAAAAAEAAAACAPz/AAAAAAEAAAD9//z/AAAAAAAAAAD///z/AAAAAAAAAAABAPz/AAAAAAAAAAADAPz/AAAAAAAAAAABAP7/AAAAAAAAAAACAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///7/AAAAAAAAAAD+//3/AAAAAAAAAAD9//7/AAAAAAAAAAD8//3/AAAAAAAAAAD8////AAAAAAAAAAD+////AAAAAAAAAAD+/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAIAAAAAAAAAAAADAP7/AAAAAAAAAAACAP//AAAAAAAAAAADAAAAAAAAAAAAAAACAAEAAAAAAAAAAAADAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAEAAAABAAMAAAAAAAEAAAD//wMAAAAAAAEAAAD9/wMAAAAAAAEAAAD8/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD8/wAAAAAAAAEAAAD9////AAAAAAEAAAD8//7/AAAAAAEAAAD///3/AAAAAAEAAAABAP3/AAAAAAEAAAADAP3/AAAAAAEAAAACAP7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP//AAAAAAEAAAADAP//AAAAAAEAAAABAAAAAAAAAAAAAAACAAAAAAAAAAEAAAABAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD+/wAAAAAAAAEAAAD+/wIAAAAAAAEAAAAAAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAEAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_gfh0i")
+
+[node name="Pawns" type="Node2D" parent="Board"]
+
+[node name="Moves" type="Node2D" parent="Board"]
+
+[node name="Captures" type="Node2D" parent="Board"]
+
+[node name="Giveup" type="Button" parent="."]
+offset_left = 1576.0
+offset_top = 469.0
+offset_right = 1840.0
+offset_bottom = 605.0
+icon = ExtResource("8_q5kwk")
+
+[connection signal="pressed" from="Giveup" to="Board" method="_on_giveup_pressed"]

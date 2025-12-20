@@ -1,0 +1,192 @@
+[gd_scene load_steps=8 format=4 uid="uid://dbg0ssx5wdo1r"]
+
+[ext_resource type="Script" uid="uid://dqjata21qg23l" path="res://Elements/Scripts/end_game_window.gd" id="1_0phbt"]
+[ext_resource type="Texture2D" uid="uid://b3nfsyviuhrog" path="res://Resources/Textures/background.png" id="1_2ymb3"]
+[ext_resource type="Texture2D" uid="uid://cjd4ykmi1i7yg" path="res://Resources/Textures/board_tiles.png" id="2_0phbt"]
+[ext_resource type="Texture2D" uid="uid://8ja6dalcjof4" path="res://Resources/Textures/restart_button.png" id="3_l30s7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0phbt"]
+texture = ExtResource("2_0phbt")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_l30s7"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_0phbt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_x7303"]
+font_size = 75
+font_color = Color(0.8560673, 0.8560673, 0.85606724, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="End_Game_Window" type="Node"]
+script = ExtResource("1_0phbt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2ymb3")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(448, 28)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D"]
+position = Vector2(512, 512)
+tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAAAAAAAAAAAAAEAAAAAAP//AAAAAAAAAAD//wAAAAAAAAAAAAD+//7/AAAAAAEAAAD9//3/AAAAAAEAAAD8//z/AAAAAAEAAAD+//z/AAAAAAEAAAAAAPz/AAAAAAEAAAACAPz/AAAAAAEAAAD9//z/AAAAAAAAAAD///z/AAAAAAAAAAABAPz/AAAAAAAAAAADAPz/AAAAAAAAAAABAP7/AAAAAAAAAAACAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///7/AAAAAAAAAAD+//3/AAAAAAAAAAD9//7/AAAAAAAAAAD8//3/AAAAAAAAAAD8////AAAAAAAAAAD+////AAAAAAAAAAD+/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAIAAAAAAAAAAAADAP7/AAAAAAAAAAACAP//AAAAAAAAAAADAAAAAAAAAAAAAAACAAEAAAAAAAAAAAADAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAEAAAABAAMAAAAAAAEAAAD//wMAAAAAAAEAAAD9/wMAAAAAAAEAAAD8/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD8/wAAAAAAAAEAAAD9////AAAAAAEAAAD8//7/AAAAAAEAAAD///3/AAAAAAEAAAABAP3/AAAAAAEAAAADAP3/AAAAAAEAAAACAP7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP//AAAAAAEAAAADAP//AAAAAAEAAAABAAAAAAAAAAAAAAACAAAAAAAAAAEAAAABAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD+/wAAAAAAAAEAAAD+/wIAAAAAAAEAAAAAAAIAAAAAAAEAAAACAAIAAAAAAAEAAAADAAEAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_l30s7")
+
+[node name="Winner" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 704.0
+offset_top = 284.0
+offset_right = 1216.0
+offset_bottom = 540.0
+label_settings = SubResource("LabelSettings_x7303")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 856.0
+offset_top = 548.0
+offset_right = 1064.0
+offset_bottom = 656.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+icon = ExtResource("3_l30s7")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

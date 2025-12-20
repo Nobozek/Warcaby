@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdk7u6m8a1ga8"]
+
+[ext_resource type="Texture2D" uid="uid://bqldpuo5nngmk" path="res://Resources/Textures/dark_pawn.png" id="1_kym4d"]
+[ext_resource type="Script" uid="uid://bere35ctlctso" path="res://Elements/Scripts/dark_pawn.gd" id="2_7p57a"]
+[ext_resource type="Texture2D" uid="uid://by1kajni5erhi" path="res://Resources/Textures/can_capture.png" id="2_g4obo"]
+[ext_resource type="Texture2D" uid="uid://bav616768curs" path="res://Resources/Textures/crown.png" id="4_bsoo0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7p57a"]
+radius = 59.413803
+
+[node name="DarkPawn" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("2_7p57a")
+
+[node name="Can_Capture" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_g4obo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kym4d")
+
+[node name="Crown" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_bsoo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7p57a")

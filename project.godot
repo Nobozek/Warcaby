@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Warcaby"
+config/version="1.0.0.0"
+run/main_scene="res://Elements/Scenes/game_window.tscn"
+config/features=PackedStringArray("4.5", "Mobile")
+config/icon="uid://dmrjnjjxr4gc2"
+
+[autoload]
+
+GameData="*res://GameData.gd"
+GameFunctions="*res://GameFunctions.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/resizable=false
+
+[rendering]
+
+renderer/rendering_method="mobile"
